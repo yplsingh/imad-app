@@ -16,7 +16,7 @@ var config = {
 
 var pool = new Pool(config);
 
-/* var articles = {
+var articles = {
    'article-one' : {
       title: 'Article One | Panna Yadav',
       heading: 'Article One',
@@ -90,7 +90,7 @@ function createTemplate(data) {
                   `;
       return htmlTemplate;
 }
-*/
+
 
 app.get('/test-db', function(req, res){
     pool.query('SELECT * FROM USER', function(err, result){
@@ -119,10 +119,10 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-/*app.get('/:articleName', function (req, res) {
+app.get('/:articleName', function (req, res) {
   var articleName = req.params.articleName;
   res.send(createTemplate(articles[articleName]));
-});*/
+});
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
