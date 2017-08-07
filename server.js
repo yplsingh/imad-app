@@ -92,7 +92,7 @@ function createTemplate(data) {
 }
 */
 
-app.get('/test-bd', function(req, res){
+app.get('/test-db', function(req, res){
     pool.query('SELECT * FROM USER', function(err, result){
         if(err){
             res.status(500).send(err.toString());
