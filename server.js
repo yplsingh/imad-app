@@ -79,7 +79,7 @@ function createTemplate(data) {
                         <hr/>
                         <h3> ${heading} </h3>
                         <div>
-                            ${date}
+                            ${date}.toString()
                         </div>
                         <div>
                           ${content}
@@ -121,7 +121,17 @@ app.get('/ui/main.js', function (req, res) {
 
 app.get('/:articleName', function (req, res) {
   var articleName = req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
+      pool.query("SELECT * FROM article WHERE name = '"+ articleName +"'", function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        } else if(result.length === 0){
+            res.status(400).send('Article not found.');
+        } else{
+            res.send(createTemplate(result.rows[0]));
+        }
+        
+    });
+  
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
