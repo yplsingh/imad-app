@@ -16,6 +16,49 @@ var config = {
 
 var pool = new Pool(config);
 
+var articles = {
+   'article-one' : {
+      title: 'Article One | Panna Yadav',
+      heading: 'Article One',
+      date: 'Aug 5, 2017',
+      content:`<p>
+        This is the content of my first article. This is the content of my first article.
+        This is the content of my first article. This is the content of my first article.
+        This is the content of my first article. This is the content of my first article.
+      </p>
+      <p>
+          This is the content of my first article. This is the content of my first article.
+          This is the content of my first article. This is the content of my first article.
+          This is the content of my first article. This is the content of my first article.
+          This is the content of my first article. This is the content of my first article.
+        </p>
+        <p>
+          This is the content of my first article. This is the content of my first article.
+          This is the content of my first article. This is the content of my first article.
+          This is the content of my first article. This is the content of my first article.
+          This is the content of my first article. This is the content of my first article.
+        </p>`
+      },
+      'article-two' : {
+         title: 'Article Two | Panna Yadav',
+         heading: 'Article Two',
+         date: 'Aug 10, 2017',
+         content:`<p>
+           This is the content of my second article. This is the content of my second article.
+         </p>
+         `
+       },
+       'article-three' : {
+          title: 'Article Three | Panna Yadav',
+          heading: 'Article Three',
+          date: 'Aug 15, 2017',
+          content:`<p>
+            This is the content of my third article. This is the content of my third article.
+          </p>
+          `
+          }
+};
+
 function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
