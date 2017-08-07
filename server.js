@@ -59,16 +59,6 @@ var articles = {
           }
 };
 
-app.get('/test-bd', function(req, res){
-    pool.query('SELECT * FROM USER', function(err, result){
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else{
-            res.send(JSON.stringify(result));
-        }
-    });
-});
 function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
@@ -100,6 +90,18 @@ function createTemplate(data) {
                   `;
       return htmlTemplate;
 }
+
+app.get('/test-bd', function(req, res){
+    pool.query('SELECT * FROM USER', function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send(JSON.stringify(result));
+        }
+    });
+});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
