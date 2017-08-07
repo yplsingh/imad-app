@@ -18,8 +18,8 @@ var pool = new Pool(config);
 
 var articles = {
    'article-one' : {
-      title : 'Article One | Panna Yadav',
-      heading : 'Article One',
+      title: 'Article One | Panna Yadav',
+      heading: 'Article One',
       date: 'Aug 5, 2017',
       content:`<p>
         This is the content of my first article. This is the content of my first article.
